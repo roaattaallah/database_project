@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-app-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: python-app
+  template:
+    metadata:
+      labels:
+        app: python-app
+    spec:
+      imagePullSecrets:
+        - name: acr-secret
+      containers:
+      - name: python-app
+        image: bookcontainer.azurecr.io/my-flask-app:latest
+        ports:
+        - containerPort: 5007
+        env:
+        - name: MONGODB_URI
+          valueFrom:
+            configMapKeyRef:
+              name:  my-python-app-configmap
+              key: MONGODB_URI

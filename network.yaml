@@ -1,0 +1,13 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-python-to-mongodb
+spec:
+  podSelector:
+    matchLabels:
+      app: python-app
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: mongodb

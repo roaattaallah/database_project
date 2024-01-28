@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongodb
+  template:
+    metadata:
+      labels:
+        app: mongodb
+    spec:
+      containers:
+      - name: mongodb
+        image: mongo:latest
+        ports:
+        - containerPort: 27017
+        env:
+        - name: MONGODB_URI  
+          value: "mongodb://roa-attaallah-pro:9DdNdYQgCEsrNFTfOlRcCGLOH8vANAfeJpAaiJeWBeKXnTh7LBygJAAnyk5O0QuzENidvhAThhdQACDbeVmLpQ==@roa-attaallah-pro.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@roa-attaallah-pro@"
+
+
