@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 # MongoDB connection
  
-client = MongoClient("mongodb://roa-attaallah-pro:9DdNdYQgCEsrNFTfOlRcCGLOH8vANAfeJpAaiJeWBeKXnTh7LBygJAAnyk5O0QuzENidvhAThhdQACDbeVmLpQ==@roa-attaallah-pro.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@roa-attaallah-pro@")
+client = MongoClient("mongodb://roa-attaallah-pro:9DdNdYQgCEsrNFTfOlRcCGLOH8vANAfeJpAaiJeWBeKXnTh7LBygJAAnyk5O0QuzENidvhAThhdQA")
 mongodb_uri = os.environ.get('MONGODB_URI', 'default-mongodb-uri') 
 
 # Use the "BOOKSTORE" database
