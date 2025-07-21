@@ -27,13 +27,6 @@
 - **Containerization**: Docker
 - **Orchestration**: Kubernetes (YAML manifests included)
 
-## Quick Start
-
-### Prerequisites
-
-- Docker
-- (Optional) Kubernetes (minikube, kind, or a cloud provider)
-
 ### Local Development
 
 1. **Clone the repository**
@@ -57,18 +50,6 @@
    ```bash
    docker run -p 5007:5007 booknest-api
    ```
-
-### Kubernetes
-
-- Apply the manifests in your cluster:
-  ```bash
-  kubectl apply -f mongo-deployment.yaml
-  kubectl apply -f mongodb-service.yaml
-  kubectl apply -f configmap.yaml
-  kubectl apply -f python-deployment.yaml
-  kubectl apply -f python-service.yaml
-  kubectl apply -f network.yaml
-  ```
 
 ## Example Book Data
 
